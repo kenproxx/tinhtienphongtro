@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="huynh" oninput="calcMoney()">Nhập tiền Huỳnh chi. <br>
+<input type="number" id="kien" oninput="calcMoney()">Nhập tiền Kiên chi.
+<h1 id="kq"></h1>
+<script>
+    let huynh = document.getElementById('huynh')
+    let kien = document.getElementById('kien')
+    let kq = document.getElementById('kq')
+
+    function calcMoney(){
+        let huynh1 = parseInt(huynh.value)
+        let kien1 = parseInt(kien.value)
+        if (huynh1 > kien1){
+            kq.innerHTML = 'số tiền kiên phải trả là: ' + (huynh.value - kien.value) / 2
+        } else if (kien1 > huynh1) {
+            kq.innerHTML = 'số tiền huỳnh phải trả là: ' + (kien.value - huynh.value) / 2
+        }
+    }
+</script>
+</body>
+</html>
